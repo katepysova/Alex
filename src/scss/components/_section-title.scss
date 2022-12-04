@@ -1,0 +1,49 @@
+@import "../variables";
+@import "../functions";
+
+$dash-color: #d9d9d9;
+
+.section-title {
+  display: grid;
+  grid-template-columns: max-content;
+  column-gap: rem(9px);
+
+  &--centered {
+    justify-content: center;
+  }
+
+  &--left-aligned {
+    justify-content: start;
+  }
+
+  &--right-aligned {
+    justify-content: end;
+  }
+
+  &__subheading {
+    font-size: rem(12px);
+    font-weight: 500;
+    line-height: rem(24px);
+    letter-spacing: 7.5px;
+    color: $color-text-grey;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &::before {
+      content: "";
+      background-color: $dash-color;
+      width: rem(16px);
+      height: rem(2px);
+    }
+  }
+
+  &__heading {
+    font-family: $font-plus-jakarta;
+    font-size: rem(36px);
+    font-weight: 700;
+    line-height: rem(45px);
+    letter-spacing: rem(0);
+  }
+}
