@@ -32,13 +32,13 @@ img {
   vertical-align: top;
 }
 
+svg {
+  width: rem(24px);
+  height: rem(24px);
+}
+
 .main {
   flex-grow: 1;
-  padding-top: $header-height-desktop;
-
-  @media only screen and (max-width: $bp-lg) {
-    padding-top: $header-height-mobile;
-  }
 }
 
 .container {
