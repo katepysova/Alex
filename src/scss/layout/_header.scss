@@ -3,7 +3,7 @@
 
 .header {
   height: $header-height-desktop;
-  background-color: $color-white;
+  background-color: rgba($color-white, 0.95);
   position: fixed;
   z-index: 90;
   top: 0;
