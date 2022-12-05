@@ -1,0 +1,76 @@
+@import "../variables";
+@import "../functions";
+@import "../mixins";
+
+.services {
+  background-color: $color-background-grey;
+
+  &__container {
+    padding-top: rem(114px);
+    padding-bottom: rem(184px);
+  }
+
+  &__cards {
+    margin-top: rem(104px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: rem(56px);
+
+    @media only screen and (max-width: $bp-lg) {
+      grid-gap: rem(44px);
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background-color: $color-white;
+    padding: rem(53px) rem(57px);
+    border-radius: rem(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &-logo {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-background-purple;
+      border-radius: rem(16px);
+
+      svg {
+        color: $color-primary;
+      }
+    }
+
+    &-title {
+      font-family: $font-plus-jakarta;
+      font-size: rem(16px);
+      font-weight: 500;
+      line-height: rem(20px);
+      letter-spacing: 0;
+      color: $color-black;
+      margin-top: rem(24px);
+    }
+
+    &-text {
+      @include paragraph;
+
+      margin-top: rem(16px);
+      flex-grow: 1;
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+      padding: rem(50px) rem(44px);
+    }
+  }
+}

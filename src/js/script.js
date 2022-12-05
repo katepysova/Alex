@@ -1,10 +1,10 @@
 const headerEl = document.querySelector(".header");
 const menuTogglerBtn = document.querySelector(".header__nav-toggler");
-const wrapper = document.querySelector(".wrapper");
+const html = document.querySelector("html");
 
 menuTogglerBtn.addEventListener("click", () => {
   headerEl.classList.toggle("active");
-  wrapper.classList.toggle("u-static");
+  html.classList.toggle("u-static");
 });
 
 window.addEventListener("resize", () => {
@@ -12,7 +12,7 @@ window.addEventListener("resize", () => {
     headerEl.classList.remove("active");
   }
 
-  if (wrapper.classList.remove("u-static")) {
-    wrapper.classList.remove("u-static");
+  if (html.classList.remove("u-static")) {
+    html.classList.remove("u-static");
   }
 });
