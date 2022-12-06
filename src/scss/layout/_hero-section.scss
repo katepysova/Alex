@@ -4,9 +4,12 @@
 .hero {
   height: 100vh;
   min-height: 100vh;
-  padding-top: $header-height-desktop;
-  padding-bottom: $header-height-desktop;
   background-color: $color-white;
+
+  @media only screen and (max-width: $bp-exta-lg) {
+    padding-top: $header-height-desktop;
+    padding-bottom: $header-height-desktop;
+  }
 
   &__container {
     height: 100%;
@@ -121,10 +124,14 @@
     }
   }
 
+  // used !important to override fullpage.js styles
+  @media only screen and (max-width: $bp-exta-lg) {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
   @media only screen and (max-width: $bp-sm) {
     padding-top: calc(#{$header-height-mobile} + 4rem);
     padding-bottom: $header-height-mobile;
-    height: auto;
-    min-height: auto;
   }
 }
