@@ -70,3 +70,18 @@ const swiper = new Swiper(".swiper", {
     },
   },
 });
+
+const portfolioProjectLinks = document.querySelectorAll(
+  ".portfolio__card-link"
+);
+portfolioProjectLinks.forEach((link) => {
+  const tooltip = link.querySelector(".tooltiptext");
+  link.addEventListener("mouseout", () => {
+    tooltip.innerHTML = "Copy to the clipboard";
+  });
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigator.clipboard.writeText(link.getAttribute("href") || "#");
+    tooltip.innerHTML = "Copied to the clipboard";
+  });
+});

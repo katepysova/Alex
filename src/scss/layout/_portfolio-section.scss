@@ -42,18 +42,15 @@
   }
 
   &__card {
-    &:link,
-    &:visited {
-      width: 100%;
-      height: auto;
-      border-radius: rem(8px);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      text-decoration: none;
-      color: $color-black;
-      transition: $transiton-default;
-    }
+    width: 100%;
+    height: auto;
+    border-radius: rem(8px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-decoration: none;
+    color: $color-black;
+    transition: $transiton-default;
 
     &-image {
       padding-bottom: 79.65%;
@@ -132,7 +129,27 @@
     }
 
     &-link {
-      display: inline-block;
+      &:link,
+      &:visited {
+        position: relative;
+        display: inline-block;
+        color: $color-text-grey;
+        transition: $transiton-default;
+      }
+
+      &:hover,
+      &:active {
+        color: $color-primary;
+
+        .tooltiptext {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      svg {
+        color: inherit;
+      }
     }
   }
 }
