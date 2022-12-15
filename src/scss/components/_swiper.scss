@@ -1,4 +1,5 @@
 @use "sass:color";
+
 @import "../variables";
 @import "../functions";
 
@@ -45,7 +46,7 @@ $color-background-pink: #eae6fe;
     &:hover:not(.swiper-button-disabled),
     &:active:not(.swiper-button-disabled) {
       color: color.adjust($color-primary, $lightness: -5%);
-      background-color:  color.adjust($color-background-pink, $lightness: -5%);
+      background-color: color.adjust($color-background-pink, $lightness: -5%);
     }
 
     &.swiper-button-disabled {
