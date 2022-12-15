@@ -43,20 +43,25 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-custom-button-next",
     prevEl: ".swiper-custom-button-prev",
   },
+  slidesPerView: "auto",
   loop: false,
   slidesPerGroup: 1,
 
   breakpoints: {
-    [mediaQueries.breakPointSmall]: {
+    [mediaQueries.breakPointExtraSmall]: {
       slidesPerView: 1,
+      spaceBetween: 24,
+    },
+    [mediaQueries.breakPointSmall]: {
+      slidesPerView: 2,
       spaceBetween: 32,
     },
     [mediaQueries.breakPointMedium]: {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 48,
     },
     [mediaQueries.breakpointLarge]: {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 48,
     },
     [mediaQueries.breakpointExtraLarge]: {

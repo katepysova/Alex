@@ -1,10 +1,17 @@
+@use "sass:color";
+@import "../variables";
+@import "../functions";
+
+$color-background-pink: #eae6fe;
+
 .swiper {
   width: 100%;
   height: auto;
 
   .swiper-slide {
+    height: 100%;
+    width: 100%;
     overflow: visible;
-    text-align: center;
     display: -webkit-box;
     display: flexbox;
     display: flex;
@@ -15,5 +22,35 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+  }
+}
+
+.swiper-custom-controls {
+  display: flex;
+  align-items: center;
+  gap: rem(16px);
+
+  .swiper-custom-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(8px);
+    border-radius: rem(16px);
+    border: none;
+    color: $color-primary;
+    background-color: $color-background-pink;
+    transition: $transiton-default;
+
+    &:hover:not(.swiper-button-disabled),
+    &:active:not(.swiper-button-disabled) {
+      color: color.adjust($color-primary, $lightness: -5%);
+      background-color:  color.adjust($color-background-pink, $lightness: -5%);
+    }
+
+    &.swiper-button-disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
   }
 }
