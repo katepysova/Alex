@@ -1,4 +1,5 @@
 import Fullpage from "fullpage.js";
+import Swiper, { Navigation } from "swiper";
 import { mediaQueries } from "./constants.js";
 
 const headerEl = document.querySelector(".header");
@@ -21,7 +22,7 @@ window.addEventListener("resize", () => {
 });
 
 // eslint-disable-next-line no-unused-vars
-const _ = new Fullpage("#fullpage", {
+const fullpage = new Fullpage("#fullpage", {
   licenseKey: process.env.FULLPAGE_JS_KEY || "",
   responsiveWidth: mediaQueries.breakpointExtraLarge,
   autoScrolling: true,
@@ -33,4 +34,30 @@ const _ = new Fullpage("#fullpage", {
   scrollBar: true,
   keyboardScrolling: true,
   recordHistory: false,
+});
+
+// eslint-disable-next-line no-unused-vars
+const swiper = new Swiper(".swiper", {
+  modules: [Navigation],
+  navigation: {
+    nextEl: ".swiper-custom-button-next",
+    prevEl: ".swiper-custom-button-prev",
+  },
+  loop: false,
+  slidesPerGroup: 1,
+
+  breakpoints: {
+    [mediaQueries.breakPointSmall]: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    [mediaQueries.breakpointLarge]: {
+      slidesPerView: 2,
+      spaceBetween: 24,
+    },
+    [mediaQueries.breakpointExtraLarge]: {
+      slidesPerView: 3,
+      spaceBetween: 56,
+    },
+  },
 });

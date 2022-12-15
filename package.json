@@ -50,6 +50,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "fullpage.js": "^4.0.15"
+    "fullpage.js": "^4.0.15",
+    "swiper": "^8.4.5"
   }
 }
