@@ -49,11 +49,15 @@ const swiper = new Swiper(".swiper", {
   breakpoints: {
     [mediaQueries.breakPointSmall]: {
       slidesPerView: 1,
-      spaceBetween: 20,
+      spaceBetween: 32,
+    },
+    [mediaQueries.breakPointMedium]: {
+      slidesPerView: 2,
+      spaceBetween: 48,
     },
     [mediaQueries.breakpointLarge]: {
       slidesPerView: 2,
-      spaceBetween: 24,
+      spaceBetween: 48,
     },
     [mediaQueries.breakpointExtraLarge]: {
       slidesPerView: 3,

@@ -16,13 +16,30 @@
 
   &__header {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    line-height: rem(45px);
     justify-content: space-between;
     margin-bottom: rem(94px);
 
     @media only screen and (max-width: $bp-exta-lg) {
       margin-bottom: rem(144px);
     }
+
+    @media only screen and (max-width: $bp-md) {
+      margin-bottom: rem(84px);
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      flex-direction: column;
+      align-items: center;
+      gap: rem(24px);
+      margin-bottom: rem(64px);
+    }
+
+    @media only screen and (max-width: $bp-extra-sm) {
+      margin-bottom: rem(24px);
+    }
+
   }
 
   &__card {
