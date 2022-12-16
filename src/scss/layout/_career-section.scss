@@ -1,0 +1,77 @@
+@import "../variables";
+@import "../functions";
+@import "../mixins";
+
+.career {
+  background-color: $color-background-grey;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 0.353fr 0.647fr;
+    padding-top: rem(125px);
+
+    @media only screen and (max-width: $bp-exta-lg) {
+      padding-top: rem(104px);
+      padding-bottom: rem(176px);
+    }
+  }
+
+  .section-title {
+    margin-bottom: rem(80px);
+  }
+
+  &__tabs-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+  }
+
+  &__tab {
+    &-button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: rem(14px) rem(24px);
+      border: none;
+      border-radius: rem(4px);
+      font-size: rem(16px);
+      font-weight: 400;
+      line-height: rem(19px);
+      letter-spacing: 0;
+      text-align: left;
+      transition: $transiton-default;
+
+      svg {
+        opacity: 0;
+        transition: $transiton-default;
+      }
+
+      &:hover,
+      &:active {
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-button.career__tab-button--active {
+      background-color: $color-white;
+      color: $color-primary;
+
+      svg {
+        opacity: 1;
+      }
+    }
+
+    &-content {
+      display: none;
+    }
+
+    &-content.career__tab-content--active {
+      display: block;
+    }
+  }
+}

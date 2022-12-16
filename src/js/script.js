@@ -92,3 +92,28 @@ portfolioProjectLinks.forEach((link) => {
     tooltip.innerHTML = "Copied to clipboard";
   });
 });
+
+const careerTabs = document.querySelectorAll(".career__tab-button");
+careerTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    if (!tab.classList.contains("career__tab-button--active")) {
+      document
+        .querySelectorAll(".career__tab-button")
+        .forEach((t) => t.classList.remove("career__tab-button--active"));
+      document
+        .querySelectorAll(".career__tab-content")
+        .forEach((contentItem) =>
+          contentItem.classList.remove("career__tab-content--active")
+        );
+      const id = tab.getAttribute("data-tab");
+      const activeTabContent = document.getElementById(id);
+      tab.classList.add("career__tab-button--active");
+      activeTabContent.classList.add("career__tab-content--active");
+    }
+  });
+});
+
+const defaultTab = document.querySelector(".career__tab-button.defalt-tab");
+if (defaultTab) {
+  defaultTab.click();
+}
