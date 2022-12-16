@@ -86,9 +86,14 @@
           ),
           url("../images/portfolio-item-3.jpg");
       }
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
     &-content {
+      flex-grow: 1;
       border: 1px solid $color-background-purple;
       border-top: none;
       background-color: $color-white;
@@ -98,6 +103,8 @@
     }
 
     &-title {
+      @include line-clip(1);
+
       font-family: $font-plus-jakarta;
       font-size: rem(16px);
       font-weight: 500;
@@ -109,6 +116,7 @@
     &-info {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 16px;
 
       svg {

@@ -10,7 +10,7 @@ $color-background-pink: #eae6fe;
   height: auto;
 
   .swiper-slide {
-    height: 100%;
+    height: auto;
     width: 100%;
     overflow: visible;
     display: -webkit-box;
@@ -22,7 +22,7 @@ $color-background-pink: #eae6fe;
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: stretch;
   }
 }
 
