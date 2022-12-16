@@ -9,6 +9,7 @@ $color-background-pink: #eae6fe;
   width: 100%;
   height: auto;
 
+
   .swiper-slide {
     height: auto;
     width: 100%;
@@ -23,6 +24,11 @@ $color-background-pink: #eae6fe;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: stretch;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    margin-right: rem(-24px);
+    padding-right: rem(24px);
   }
 }
 

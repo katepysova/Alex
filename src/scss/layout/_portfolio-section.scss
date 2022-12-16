@@ -146,7 +146,9 @@
       }
 
       &:hover,
-      &:active {
+      &:active,
+      &:focus
+      {
         color: $color-primary;
 
         .tooltiptext {

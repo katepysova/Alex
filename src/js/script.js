@@ -45,17 +45,24 @@ const swiper = new Swiper(".swiper", {
   },
   slidesPerView: "auto",
   loop: false,
-  slidesPerGroup: 1,
+  spaceBetween: 16,
 
   breakpoints: {
-    [mediaQueries.breakPointExtraSmall]: {
-      slidesPerView: 1,
+    [mediaQueries.breakPointSuperSmall]: {
+      slidesPerView: 1.1,
       spaceBetween: 24,
     },
+
+    [mediaQueries.breakPointExtraSmall]: {
+      slidesPerView: 1.3,
+      spaceBetween: 24,
+    },
+
     [mediaQueries.breakPointSmall]: {
       slidesPerView: 2,
-      spaceBetween: 32,
+      spaceBetween: 36,
     },
+
     [mediaQueries.breakPointMedium]: {
       slidesPerView: 3,
       spaceBetween: 48,
@@ -77,11 +84,11 @@ const portfolioProjectLinks = document.querySelectorAll(
 portfolioProjectLinks.forEach((link) => {
   const tooltip = link.querySelector(".tooltiptext");
   link.addEventListener("mouseout", () => {
-    tooltip.innerHTML = "Copy to the clipboard";
+    tooltip.innerHTML = "Copy to clipboard";
   });
   link.addEventListener("click", (event) => {
     event.preventDefault();
     navigator.clipboard.writeText(link.getAttribute("href") || "#");
-    tooltip.innerHTML = "Copied to the clipboard";
+    tooltip.innerHTML = "Copied to clipboard";
   });
 });

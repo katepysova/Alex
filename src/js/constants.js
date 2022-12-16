@@ -5,4 +5,5 @@ export const mediaQueries = {
   breakPointMedium: 990,
   breakPointSmall: 750,
   breakPointExtraSmall: 450,
+  breakPointSuperSmall: 280,
 };
