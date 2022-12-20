@@ -12,6 +12,11 @@
       padding-top: rem(114px);
       padding-bottom: rem(184px);
     }
+
+    @media only screen and (max-width: $bp-exta-lg) {
+      padding-top: rem(84px);
+      padding-bottom: rem(96px);
+    }
   }
 
   &__cards {

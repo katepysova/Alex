@@ -12,6 +12,11 @@
       padding-top: rem(104px);
       padding-bottom: rem(176px);
     }
+
+    @media only screen and (max-width: $bp-md) {
+      padding-top: rem(84px);
+      padding-bottom: rem(96px);
+    }
   }
 
   &__header {
