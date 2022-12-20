@@ -7,7 +7,7 @@
 
   &__container {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(auto, rem(280px)) 1fr;
     padding-top: rem(125px);
 
     @media only screen and (max-width: $bp-exta-lg) {
@@ -104,6 +104,10 @@
   &__tab-data {
     padding-left: rem(144px);
     padding-top: rem(32px);
+
+    @media only screen and (max-width: $bp-lg) {
+      padding-left: rem(84px);
+    }
 
     @media only screen and (max-width: $bp-md) {
       padding: 0;
