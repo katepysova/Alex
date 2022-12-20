@@ -24,11 +24,6 @@ $color-background-pink: #eae6fe;
     -ms-flex-align: center;
     align-items: stretch;
   }
-
-  @media only screen and (max-width: $bp-sm) {
-    margin-right: rem(-24px);
-    padding-right: rem(24px);
-  }
 }
 
 .swiper-custom-controls {
