@@ -1,0 +1,138 @@
+@import "../variables";
+@import "../utils";
+@import "../mixins";
+
+.blog {
+  &__container {
+    padding-top: rem(125px);
+
+    @media only screen and (max-width: $bp-exta-lg) {
+      padding-top: rem(104px);
+      padding-bottom: rem(176px);
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      padding-top: rem(84px);
+      padding-bottom: rem(96px);
+    }
+  }
+
+  .section-title {
+    margin-bottom: rem(64px);
+
+    @media only screen and (max-width: $bp-md) {
+      margin-bottom: rem(56px);
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      margin-bottom: rem(36px);
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(40px);
+
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 36px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    &-body {
+      border: 1px solid $color-background-purple;
+      border-radius: 0 0 rem(8px) rem(8px);
+      padding: rem(16px) rem(16px) rem(24px);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    &-title {
+      @include line-clip(1);
+
+      font-family: $font-plus-jakarta;
+      font-size: rem(16px);
+      font-weight: 500;
+      line-height: rem(24px);
+      letter-spacing: rem(0);
+      margin-bottom: rem(16px);
+    }
+
+    &-date {
+      font-size: rem(12px);
+      font-weight: 500;
+      line-height: rem(15px);
+      white-space: nowrap;
+      letter-spacing: 0;
+      color: $color-text-grey;
+      background-color: $color-background-grey;
+      display: inline-block;
+      margin-bottom: rem(16px);
+      padding: rem(4px) rem(8px);
+      border-radius: rem(4px);
+      align-self: flex-start;
+    }
+
+    &-text {
+      @include line-clip(3);
+      @include paragraph($color-text-grey);
+
+      margin-bottom: rem(42px);
+      flex-grow: 1;
+    }
+
+    &-link {
+      &:link,
+      &:visited {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: $color-text-grey;
+        font-size: rem(14px);
+        font-weight: 500;
+        line-height: rem(17px);
+        letter-spacing: rem(0);
+        transition: $transiton-default;
+      }
+
+      &:hover,
+      &:active {
+        color: $color-primary;
+      }
+    }
+
+    &-image {
+      border-radius: rem(8px) rem(8px) 0 0;
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 65%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $transiton-default;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
