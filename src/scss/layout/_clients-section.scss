@@ -1,0 +1,97 @@
+@import "../variables";
+@import "../functions";
+@import "../mixins";
+
+.clients {
+  background-color: $color-background-grey;
+
+  &__container {
+    padding-top: rem(125px);
+
+    @media only screen and (max-width: $bp-exta-lg) {
+      padding-bottom: rem(184px);
+      padding-top: rem(114px);
+    }
+
+    @media only screen and (max-width: $bp-exta-lg) {
+      padding-bottom: rem(96px);
+      padding-top: rem(84px);
+    }
+  }
+
+  .section-title {
+    margin-bottom: rem(132px);
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: rem(48px);
+
+    @media only screen and (max-width: $bp-exta-lg) {
+      column-gap: rem(32px);
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: rem(80px);
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: rem(80px);
+    }
+  }
+
+  &__card {
+    background-color: $color-white;
+    padding: rem(84px) rem(44px) rem(30px);
+    border-radius: rem(8px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card-photo {
+    width: rem(96px);
+    height: rem(96px);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__card-testimonial {
+    @include line-clip(3, $is-flex-item: true);
+
+    flex: 1;
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: rem(28px);
+    letter-spacing: rem(0);
+    margin-bottom: rem(40px);
+  }
+
+  &__card-author {
+    font-family: $font-plus-jakarta;
+    font-size: rem(14px);
+    font-weight: 500;
+    line-height: rem(24px);
+    letter-spacing: rem(0);
+    margin-bottom: rem(12px);
+  }
+
+  &__card-role {
+    align-self: flex-start;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: rem(12px);
+    font-weight: 500;
+    line-height: rem(15px);
+    letter-spacing: 0;
+    color: $color-text-grey;
+    padding: rem(4px) rem(8px);
+    background-color: $color-background-grey;
+  }
+}
