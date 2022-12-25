@@ -1,0 +1,32 @@
+@import "../variables";
+@import "../mixins";
+@import "../functions";
+
+$color-light-rose: #f5f3fe;
+
+.progress {
+  width: 100%;
+  height: rem(8px);
+  position: relative;
+  border-radius: rem(2px);
+  overflow: hidden;
+
+  &__empty,
+  &__filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  &__empty {
+    width: 100%;
+    z-index: 1;
+    background-color: $color-light-rose;
+  }
+
+  &__filled {
+    z-index: 2;
+    background-color: $color-primary;
+  }
+}

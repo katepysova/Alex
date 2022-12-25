@@ -1,0 +1,129 @@
+@import "../variables";
+@import "../functions";
+@import "../mixins";
+
+$circle-color: #f1f1f1;
+
+.skills {
+  background-color: $color-white;
+
+  &__container {
+    padding-top: rem(125px);
+
+    @media only screen and (max-width: $bp-exta-lg) {
+      padding-bottom: rem(184px);
+      padding-top: rem(114px);
+    }
+
+    @media only screen and (max-width: $bp-exta-lg) {
+      padding-bottom: rem(96px);
+      padding-top: rem(84px);
+    }
+  }
+
+  .section-title {
+    margin-bottom: rem(80px);
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 38fr 62fr;
+    gap: rem(150px);
+
+    @media only screen and (max-width: $bp-lg) {
+      gap: rem(75px);
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      gap: rem(48px);
+      grid-template-columns: 0.4fr 0.6fr;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      gap: rem(36px);
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__education-list {
+    padding-bottom: rem(48px);
+    list-style-type: none;
+  }
+
+  &__education-item {
+    position: relative;
+    padding-left: rem(40px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: rem(4px);
+      left: rem(4px);
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      background-color: $circle-color;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: rem(64px);
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: rem(2px);
+        height: 100%;
+        min-height: 100%;
+        background-color: $circle-color;
+        left: rem(11px);
+        top: rem(4px);
+      }
+    }
+  }
+
+  &__education-university {
+    font-family: $font-plus-jakarta;
+    font-size: rem(16px);
+    font-weight: 500;
+    line-height: rem(24px);
+    letter-spacing: rem(0);
+    margin-bottom: rem(10px);
+  }
+
+  &__education-speciality {
+    font-size: rem(14px);
+    font-weight: 400;
+    line-height: rem(17px);
+    letter-spacing: 0;
+    color: $color-text-grey;
+    margin-bottom: rem(24px);
+  }
+
+  &__education-years {
+    font-size: rem(14px);
+    font-weight: 500;
+    line-height: rem(17px);
+    letter-spacing: 0;
+  }
+
+  &__technologies-intro {
+    @include paragraph($color-text-grey);
+
+    margin-bottom: rem(64px);
+  }
+
+  &__technologies-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: rem(40px);
+  }
+
+  &__technologies-item-title {
+    font-size: rem(14px);
+    font-weight: 500;
+    line-height: rem(17px);
+    letter-spacing: 0;
+    margin-bottom: rem(16px);
+  }
+}
