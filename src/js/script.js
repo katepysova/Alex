@@ -117,3 +117,14 @@ const defaultTab = document.querySelector(".career__tab-button.defalt-tab");
 if (defaultTab) {
   defaultTab.click();
 }
+/*
+const contactsFormName = document.querySelector(".contacts__form-name");
+const contactsFormEmail = document.querySelector(".contacts__form-email");
+const contactsFormMessage = document.querySelector(".contacts__form-message");
+const contactsForm = document.querySelector(".contacts__form");
+contactsForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  console.log(Object.fromEntries(formData));
+});
+*/

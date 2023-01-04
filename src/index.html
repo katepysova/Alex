@@ -568,6 +568,94 @@
             </div>
           </div>
         </section>
+        <section class="contacts section fp-auto-height-responsive">
+          <div class="contacts__container container">
+            <form class="contacts__form">
+              <div class="contacts__form-item contacts__form-name error">
+                <input
+                  class="contacts__form-input"
+                  id="name"
+                  type="text"
+                  name="name"
+                  required
+                />
+                <label class="contacts__form-label" for="name"> Name </label>
+                <small class="contacts__form-error">Error</small>
+              </div>
+              <div class="contacts__form-item contacts__form-email">
+                <input
+                  class="contacts__form-input"
+                  id="email"
+                  type="text"
+                  name="email"
+                  required
+                />
+                <label class="contacts__form-label" for="email"> Email </label>
+                <small class="contacts__form-error">Error</small>
+              </div>
+
+              <div class="contacts__form-item contacts__form-message error">
+                <textarea
+                  class="contacts__form-input"
+                  name="message"
+                  id="message"
+                  required
+                ></textarea>
+                <label class="contacts__form-label" for="message">
+                  Message
+                </label>
+                <small class="contacts__form-error">Error</small>
+              </div>
+              <button class="contacts__form-button" type="submit">
+                Send Message
+              </button>
+            </form>
+            <ul class="contacts__list">
+              <li class="contacts__list-item">
+                <div class="contacts__list-item-icon">
+                  <svg>
+                    <use href="icons/sprite.svg#pin-outlined"></use>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contacts__list-item-title">Address</p>
+                  <a href="#" class="contacts__list-item-text">
+                    3424 Layman Avenue, Fayetteville, NC
+                  </a>
+                </div>
+              </li>
+              <li class="contacts__list-item">
+                <div class="contacts__list-item-icon">
+                  <svg>
+                    <use href="icons/sprite.svg#phone-call-outlined"></use>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contacts__list-item-title">Phone</p>
+                  <a href="tel:(501)414-1541" class="contacts__list-item-text">
+                    (501) 414-1541
+                  </a>
+                </div>
+              </li>
+              <li class="contacts__list-item">
+                <div class="contacts__list-item-icon">
+                  <svg>
+                    <use href="icons/sprite.svg#mail-outlined"></use>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contacts__list-item-title">E-Mail</p>
+                  <a
+                    href="mailto:devchapter@gmail.com"
+                    class="contacts__list-item-text"
+                  >
+                    devchapter@gmail.com
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
       </main>
       <footer class="footer">footer</footer>
     </div>
