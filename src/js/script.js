@@ -136,3 +136,6 @@ contactsForm.addEventListener("submit", (event) => {
     /* submit to the server */
   }
 });
+
+const copyRightYear = document.querySelector(".footer__year");
+copyRightYear.textContent = new Date().getFullYear();
