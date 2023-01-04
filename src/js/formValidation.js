@@ -1,53 +1,85 @@
-export const isEmpty = (value) => value !== "";
-export const isBetween = (length, min, max) => !(length <= min || length > max);
-export const isEmailValid = (email) => {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
-};
+export const isBetween = (value, min, max) =>
+  !(value.length < min || value.length > max);
 
 export const showError = (input, message) => {
-  // get the form-field element
-  const formField = input.parentElement;
-  // add the error class
-  formField.classList.add("error");
-
-  // show the error message
-  const error = formField.querySelector(".contacts__form-error");
+  const formItem = input.parentElement;
+  formItem.classList.add("error");
+  const error = formItem.querySelector(".contacts__form-error");
   error.textContent = message;
 };
 
-/*
-export const checkUsername = () => {
-  let valid = false;
-  const min = 3;
-  const max = 25;
-  const username = usernameEl.value.trim();
+export const hideError = (input) => {
+  const formItem = input.parentElement;
+  formItem.classList.remove("error");
+  const error = formItem.querySelector(".contacts__form-error");
+  error.textContent = "";
+};
 
-  if (!isRequired(username)) {
-    showError(usernameEl, "Username cannot be blank.");
-  } else if (!isBetween(username.length, min, max)) {
+export const checkEmail = (email, isRequired = true) => {
+  const isEmailValid = (value) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(value);
+  };
+
+  let isValid = false;
+
+  const emailValue = email.value.trim() || "";
+
+  if (isRequired && emailValue.length === 0) {
+    showError(email, "Email is a required field.");
+  } else if (!isEmailValid(emailValue)) {
+    showError(email, "Email is not valid.");
+  } else {
+    isValid = true;
+    hideError(email);
+  }
+
+  return isValid;
+};
+
+export const checkUserName = (
+  userName,
+  isRequired = true,
+  min = 3,
+  max = 24
+) => {
+  let isValid = false;
+  const userNameValue = userName.value.trim() || "";
+  if (isRequired && userNameValue.length === 0) {
+    showError(userName, "User Name is a required field.");
+  } else if (!isBetween(userNameValue, min, max)) {
     showError(
-      usernameEl,
+      userName,
       `Username must be between ${min} and ${max} characters.`
     );
   } else {
-    showSuccess(usernameEl);
-    valid = true;
+    isValid = true;
+    hideError(userName);
   }
-  return valid;
+  return isValid;
 };
 
-export const checkEmail = () => {
-  let valid = false;
-  const email = emailEl.value.trim();
-  if (!isRequired(email)) {
-    showError(emailEl, "Email cannot be blank.");
-  } else if (!isEmailValid(email)) {
-    showError(emailEl, "Email is not valid.");
+export const checkMessage = (
+  message,
+  isRequired = true,
+  min = 10,
+  max = 250
+) => {
+  let isValid = false;
+
+  const messageValue = message.value.trim() || "";
+  if (isRequired && messageValue.length === 0) {
+    showError(message, "Message is a required field.");
+  } else if (!isBetween(messageValue, min, max)) {
+    showError(
+      message,
+      `Username must be between ${min} and ${max} characters.`
+    );
   } else {
-    showSuccess(emailEl);
-    valid = true;
+    isValid = true;
+    hideError(message);
   }
-  return valid;
-}; */
+
+  return isValid;
+};

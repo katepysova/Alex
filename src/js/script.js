@@ -1,6 +1,7 @@
 import Fullpage from "fullpage.js";
 import Swiper, { Navigation } from "swiper";
 import { mediaQueries } from "./constants.js";
+import { checkUserName, checkEmail, checkMessage } from "./formValidation.js";
 
 const headerEl = document.querySelector(".header");
 const menuTogglerBtn = document.querySelector(".header__nav-toggler");
@@ -117,14 +118,21 @@ const defaultTab = document.querySelector(".career__tab-button.defalt-tab");
 if (defaultTab) {
   defaultTab.click();
 }
-/*
+
 const contactsFormName = document.querySelector(".contacts__form-name");
 const contactsFormEmail = document.querySelector(".contacts__form-email");
 const contactsFormMessage = document.querySelector(".contacts__form-message");
 const contactsForm = document.querySelector(".contacts__form");
+
 contactsForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  console.log(Object.fromEntries(formData));
+  const isUserNameValid = checkUserName(contactsFormName);
+  const isEmailValid = checkEmail(contactsFormEmail);
+  const isMessageValid = checkMessage(contactsFormMessage);
+
+  const isFormValid = isUserNameValid && isEmailValid && isMessageValid;
+  if (isFormValid) {
+    /* submit to the server */
+  }
 });
-*/

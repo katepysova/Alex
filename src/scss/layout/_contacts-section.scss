@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @import "../variables";
 @import "../mixins";
 @import "../functions";
@@ -45,21 +47,6 @@
       bottom: rem(-16px);
     }
 
-    &-item {
-      position: relative;
-      overflow: visible;
-
-      &.error {
-        .contacts__form-error {
-          display: block;
-        }
-      }
-
-      &:not(:last-of-type) {
-        margin-bottom: rem(24px);
-      }
-    }
-
     &-label {
       position: absolute;
       z-index: 3;
@@ -70,6 +57,9 @@
       line-height: rem(16px);
       letter-spacing: 0;
       color: $color-text-grey;
+      background-color: $color-white;
+      padding: rem(2px) rem(4px);
+      border-radius: rem(4px);
       transition: $transiton-default;
     }
 
@@ -80,7 +70,7 @@
       z-index: 2;
       border-radius: rem(8px);
       background-color: $color-white;
-      border: none;
+      border: rem(1px) solid transparent;
       font-family: $font-inter;
       font-size: rem(14px);
       font-weight: 400;
@@ -97,9 +87,28 @@
       }
 
       &:focus + .contacts__form-label,
-      &:valid + .contacts__form-label {
+      &:not(:placeholder-shown) + .contacts__form-label {
         top: rem(-8px);
         color: $color-primary;
+      }
+    }
+
+    &-item {
+      position: relative;
+      overflow: visible;
+
+      &.error {
+        .contacts__form-error {
+          display: block;
+        }
+
+        .contacts__form-input {
+          border-color: $color-red;
+        }
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: rem(24px);
       }
     }
 
@@ -123,7 +132,7 @@
 
       &:hover,
       &:active {
-        background-color: color.adjust($color: $color-primary, $lightness: -5%);
+        background-color: color.adjust($color-primary, $lightness: -5%);
       }
     }
 
