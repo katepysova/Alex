@@ -16,10 +16,29 @@ window.addEventListener("resize", () => {
   if (headerEl.classList.contains("active")) {
     headerEl.classList.remove("active");
   }
+});
 
-  if (html.classList.remove("u-static")) {
-    html.classList.remove("u-static");
-  }
+const navLinks = document.querySelectorAll(".nav__link");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const href = link.getAttribute("href");
+    if (href === "#") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else if (href !== "#" && href.startsWith("#")) {
+      const target = document.querySelector(href);
+      target.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+    if (headerEl.classList.contains("active")) {
+      headerEl.classList.remove("active");
+    }
+  });
 });
 
 // eslint-disable-next-line no-unused-vars
