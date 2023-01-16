@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development gulp dev",
     "build": "cross-env NODE_ENV=production gulp build",
-    "deploy": "gulp deploy",
+    "deploy": "cross-env NODE_ENV=production gulp deploy",
     "lint:fix": "eslint --ext .js --fix .",
     "stylelint:fix": "stylelint --fix **/*.{scss,sass}",
     "prettier:fix": "prettier --write **/*.html",
